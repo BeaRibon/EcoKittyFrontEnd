@@ -1,0 +1,128 @@
+/* Uma única imagem como fundo do componente; título e tabela separados por linhas */
+$green: #48ff48;
+$white: #ffffff;
+$black: #0a0a0a;
+$font-pixel: 'Press Start 2P', monospace;
+
+.leaderboard {
+  display: scroll;
+  position: absolute;
+  top: 150px;
+  right: 35%;
+  width: 600px;
+  margin: auto;
+  font-family: $font-pixel;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  /* Uma imagem só como background de todo o component */
+  background-image: url('../../assets/fundoLeaderboard.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 8px solid transparent;
+  border-image: url('../../assets/fundoLeaderboard.png') 8 round;
+}
+
+// /* Título – separado por linha, sem fundo próprio */
+// .title-wrap {
+//   padding: 16px 20px;
+//   border-bottom: 3px dashed $white;
+// }
+
+.title {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: $green;
+  border-right: 3px solid $green;
+  border-left: 3px solid $green;
+  border-radius: 10px;
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin: 0;
+  background: $black;
+  margin-bottom: 10px;
+
+  @media (min-width: 480px) {
+    font-size: 30px;
+  }
+}
+
+.header,
+.row {
+  display: grid;
+  grid-template-columns: 60px 1fr 90px;
+  gap: 0;
+  align-items: center;
+  padding: 10px 8px;
+  font-size: 8px;
+  background-color: black;
+
+  @media (min-width: 480px) {
+    font-size: 15px;
+    grid-template-columns: 70px 1fr 100px;
+  }
+}
+
+/* Cabeçalhos RANK | NAME | SCORE – separados por linha abaixo */
+.header {
+  color: $white;
+  border-bottom: 2px dashed $white;
+  padding-bottom: 10px;
+
+  .col-rank,
+  .col-name,
+  .col-score {
+    color: $white;
+  }
+}
+
+/* Linhas: RANK e NAME e SCORE separados por linhas verticais tracejadas */
+.row {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+  color: $white;
+
+  .col-rank {
+    color: $green;
+    text-align: center;
+
+    &.first {
+      color: #ffd700;
+    }
+  }
+
+  .col-name {
+    color: $white;
+    text-align: center;
+    padding-left: 8px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+
+    &.first {
+      color: #ffd700;
+    }
+  }
+
+  .col-score {
+    color: $white;
+    text-align: right;
+    padding-left: 8px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+
+    &.first {
+      color: #ffd700;
+    }
+  }
+}
+
+.loading,
+.error {
+  padding: 16px;
+  text-align: center;
+  font-size: 8px;
+  color: $white;
+}
+
+.error {
+  color: #ff6b6b;
+}

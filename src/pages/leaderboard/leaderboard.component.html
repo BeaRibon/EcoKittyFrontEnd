@@ -1,0 +1,27 @@
+<div class="leaderboard">
+  <div class="title-wrap">
+    <span class="title">LEADERBOARD</span>
+  </div>
+
+  <div class="table-wrap">
+    <div class="header">
+      <span class="col-rank">RANK</span>
+      <span class="col-name">NAME</span>
+      <span class="col-score">SCORE</span>
+    </div>
+
+    @if (loading) {
+      <div class="loading">Carregando...</div>
+    } @else if (error) {
+      <div class="error">{{ error }}</div>
+    } @else {
+      @for (entry of entries; track entry.rank) {
+        <div class="row">
+          <span class="col-rank" [class.first]="entry.rank === 1">{{ entry.rank }}</span>
+          <span class="col-name" [class.first]="entry.rank === 1">{{ entry.name }}</span>
+          <span class="col-score"[class.first]="entry.rank === 1">{{ entry.score }}</span>
+        </div>
+      }
+    }
+  </div>
+</div>
