@@ -1,6 +1,6 @@
 {
   "/v1/**": {
-    "target": "http://localhost:8891",
+    "target": "http://13.218.217.109:8891",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
